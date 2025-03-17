@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>tool-rotate-left</title>
+  <g id="tool-rotate-left" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <path d="M6 13H16.4444C17.549 13 18.4444 13.8954 18.4444 15V22.1111C18.4444 23.2157 17.549 24.1111 16.4444 24.1111H6C4.89543 24.1111 4 23.2157 4 22.1111V15C4 13.8954 4.89543 13 6 13Z" fill="currentColor"/>
+    <path d="M15.1111 6.33333H19.5556C22.0102 6.33333 24 8.32318 24 10.7778V15.2222" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.4444 3L15.1111 6.33333L18.4444 9.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>tool-patient-info-anony</title>
+  <g id="tool-info" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <path d="M2.33333 24.5C2.33347 23.0311 2.68029 21.583 3.3456 20.2735C4.01091 18.9639 4.97591 17.8298 6.16213 16.9635C7.34835 16.0972 8.72229 15.5231 10.1722 15.288C11.6221 15.0528 13.1071 15.1631 14.5063 15.61" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M11.6667 15.1667C14.8883 15.1667 17.5 12.555 17.5 9.33333C17.5 6.11167 14.8883 3.5 11.6667 3.5C8.44501 3.5 5.83333 6.11167 5.83333 9.33333C5.83333 12.555 8.44501 15.1667 11.6667 15.1667Z" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 17V24" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M25.7272 18.4125L18.2728 22.5875" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M18.2181 18.5132L25.7819 22.4868" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
