@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>tool-flip-vertical</title>
+    <g id="tool-flip-vertical" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6 18V21.4921C6 22.3249 7.01269 23 8.2619 23H18.7381C19.9873 23 21 22.3249 21 21.4921V18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M21 11V7.50794C21 6.67513 19.9873 6 18.7381 6L8.2619 6C7.01269 6 6 6.67513 6 7.50794V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M23.4474 14.5L4.6579 14.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </g>
+</svg>
