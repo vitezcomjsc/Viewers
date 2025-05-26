@@ -111,6 +111,7 @@ function modeFactory({ modeConfiguration }) {
         'WindowLevel',
         'TrackballRotate',
         'Crosshairs',
+        'ThreeDCursorTool',
         'EndMoveTools',
         'Length',
         'Probe',

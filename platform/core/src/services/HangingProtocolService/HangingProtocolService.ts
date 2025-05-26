@@ -1317,8 +1317,67 @@ export default class HangingProtocolService extends PubSubService {
       }
     }
 
-    // Loop through each viewport
+    // [SPLUS] Loop through each viewport vs ThreeDCursorTool
     const { viewportOptions = DEFAULT_VIEWPORT_OPTIONS } = viewport;
+    const container = document.querySelector('[data-cy="viewport-grid"]') as HTMLDivElement;
+    if (container) {
+      // Khôi phục con trỏ mặc định
+      container.style.cursor = 'default';
+    }
+
+    //[Splus] custom icon Crosshairs vs
+    // Xử lý ẩn/mở nút dựa trên `toolGroupId`
+    if (viewportOptions.toolGroupId !== 'default') {
+      // Ẩn nút `ThreeDCursorTool`
+      const button = document.querySelector(
+        'button[data-cy="ThreeDCursorTool"]'
+      ) as HTMLButtonElement;
+
+      if (button) {
+        const parent = button.parentElement;
+        if (parent) {
+          parent.style.display = 'none'; // Ẩn parent
+        }
+      }
+
+      // Hiển thị lại nút `Crosshairs`
+      const crosshairsButton = document.querySelector(
+        'button[data-cy="Crosshairs"]'
+      ) as HTMLButtonElement;
+
+      if (crosshairsButton) {
+        const parent = crosshairsButton.parentElement;
+        if (parent) {
+          parent.style.display = ''; // Hiển thị lại parent
+        }
+      }
+    }
+
+    if (viewportOptions.toolGroupId === 'default') {
+      console.log(viewportOptions);
+      // Ẩn nút `Crosshairs`
+      const button = document.querySelector('button[data-cy="Crosshairs"]') as HTMLButtonElement;
+
+      if (button) {
+        const parent = button.parentElement;
+        if (parent) {
+          parent.style.display = 'none'; // Ẩn parent
+        }
+      }
+
+      // Hiển thị lại nút `ThreeDCursorTool`
+      const threeDCursorButton = document.querySelector(
+        'button[data-cy="ThreeDCursorTool"]'
+      ) as HTMLButtonElement;
+
+      if (threeDCursorButton) {
+        const parent = threeDCursorButton.parentElement;
+        if (parent) {
+          parent.style.display = ''; // Hiển thị lại parent
+        }
+      }
+    }
+
     // DisplaySets for the viewport, Note: this is not the actual displaySet,
     // but it is a info to locate the displaySet from the displaySetService
     const displaySetsInfo = [];
