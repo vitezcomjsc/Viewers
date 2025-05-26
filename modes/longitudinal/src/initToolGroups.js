@@ -1,3 +1,5 @@
+import ThreeDCursorTool from '../../../extensions/cornerstone/src/tools/ThreeDCursorTool';
+
 function initDefaultToolGroup(
   extensionManager,
   toolGroupService,
@@ -9,10 +11,16 @@ function initDefaultToolGroup(
     '@ohif/extension-cornerstone.utilityModule.tools'
   );
 
+  const servicesManager = extensionManager.servicesManager;
   const { toolNames, Enums } = utilityModule.exports;
 
   const tools = {
     active: [
+      {
+        toolName: ThreeDCursorTool.toolName,
+        configuration: { servicesManager: extensionManager.servicesManager },
+        bindings: [{ mouseButton: Enums.MouseBindings.Primary }],
+      },
       {
         toolName: toolNames.StackScroll,
         bindings: [{ mouseButton: Enums.MouseBindings.Primary }],
@@ -75,6 +83,7 @@ function initDefaultToolGroup(
       { toolName: toolNames.PlanarFreehandROI },
       { toolName: toolNames.SplineROI },
       { toolName: toolNames.LivewireContour },
+      { toolName: ThreeDCursorTool.toolName, configuration: { servicesManager } },
     ],
     enabled: [{ toolName: toolNames.ImageOverlayViewer }, { toolName: toolNames.ReferenceLines }],
     disabled: [

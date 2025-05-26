@@ -40,8 +40,11 @@ import {
 
 import CalibrationLineTool from './tools/CalibrationLineTool';
 import ImageOverlayViewerTool from './tools/ImageOverlayViewerTool';
+import MagnifyToolCustom from './tools/MagnifyToolCustom';
+import ThreeDCursorTool from './tools/ThreeDCursorTool';
 
 export default function initCornerstoneTools(configuration = {}) {
+  console.log("🚀 ~ initCornerstoneTools ~ configuration:", configuration)
   CrosshairsTool.isAnnotation = false;
   ReferenceLinesTool.isAnnotation = false;
   AdvancedMagnifyTool.isAnnotation = false;
@@ -65,7 +68,7 @@ export default function initCornerstoneTools(configuration = {}) {
   addTool(DragProbeTool);
   addTool(AngleTool);
   addTool(CobbAngleTool);
-  addTool(MagnifyTool);
+  addTool(MagnifyToolCustom);
   addTool(CrosshairsTool);
   addTool(SegmentationDisplayTool);
   addTool(RectangleScissorsTool);
@@ -75,6 +78,7 @@ export default function initCornerstoneTools(configuration = {}) {
   addTool(PaintFillTool);
   addTool(ReferenceLinesTool);
   addTool(CalibrationLineTool);
+  addTool(ThreeDCursorTool);
   addTool(TrackballRotateTool);
   addTool(ImageOverlayViewerTool);
   addTool(AdvancedMagnifyTool);
@@ -125,6 +129,7 @@ const toolNames = {
   PaintFill: PaintFillTool.toolName,
   ReferenceLines: ReferenceLinesTool.toolName,
   CalibrationLine: CalibrationLineTool.toolName,
+  ThreeDCursorTool: ThreeDCursorTool.toolName,
   TrackballRotateTool: TrackballRotateTool.toolName,
   CircleScissors: CircleScissorsTool.toolName,
   RectangleScissors: RectangleScissorsTool.toolName,

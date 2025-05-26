@@ -113,23 +113,25 @@ const SplitButton = ({
   );
 
   const listMenuElement = (
-    <div
-      className={classes.Content({ ...state })}
-      data-cy={`${groupId}-list-menu`}
-    >
-      <ListMenu
-        items={items}
-        onClick={collapse}
-        renderer={args => listItemRenderer({ ...args, t })}
-      />
-    </div>
-  );
-
-  return (
     <OutsideClickHandler
       onOutsideClick={collapse}
       disabled={!state.isExpanded}
     >
+      <div
+        className={classes.Content({ ...state })}
+        data-cy={`${groupId}-list-menu`}
+      >
+        <ListMenu
+          items={items}
+          onClick={collapse}
+          renderer={args => listItemRenderer({ ...args, t })}
+        />
+      </div>
+    </OutsideClickHandler>
+  );
+
+  return (
+    <>
       <div
         id="SplitButton"
         className="relative"
@@ -176,7 +178,7 @@ const SplitButton = ({
           </div>
         </div>
       </div>
-    </OutsideClickHandler>
+    </>
   );
 };
 

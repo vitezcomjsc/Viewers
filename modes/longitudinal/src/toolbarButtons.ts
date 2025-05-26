@@ -130,6 +130,21 @@ const toolbarButtons: Button[] = [
     },
   },
   {
+    id: 'ThreeDCursorTool',
+    uiType: 'ohif.radioGroup',
+    props: {
+      icon: 'tool-crosshair',
+      label: '3D cursor - display cursor that marks the same point in 3d space on all image',
+      commands: {
+        commandName: 'setToolActiveToolbar',
+        commandOptions: {
+          toolGroupIds: ['default'],
+        },
+      },
+      evaluate: 'evaluate.cornerstoneTool',
+    },
+  },
+  {
     id: 'Invert',
     uiType: 'ohif.radioGroup',
     props: {

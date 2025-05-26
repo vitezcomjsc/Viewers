@@ -467,6 +467,9 @@ class MetadataProvider {
     if (imageId.includes('&frame=')) {
       return getInformationFromURL('&frame=', '&');
     }
+    if (imageId.includes('?frame=')) {
+      return getInformationFromURL('?frame=', '?');
+    }
     return;
   }
 

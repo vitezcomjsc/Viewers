@@ -5,7 +5,7 @@ window.config = {
   extensions: [],
 
   // [CAUTION]: This will degrade the performance of the application.
-  // Only enable this option for debugging/ urgent purposes.
+  // Only disable this option for debugging/ urgent purposes.
   useSharedArrayBuffer: true,
 
   showLoadingIndicator: true,
