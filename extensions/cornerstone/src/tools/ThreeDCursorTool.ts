@@ -33,6 +33,9 @@ class ThreeDCursorTool extends BaseTool {
     toolProps: PublicToolProps = {},
     defaultToolProps: ToolProps = {
       supportedInteractionTypes: ['Mouse', 'Touch'],
+      configuration: {
+        touchDragThreshold: 1, // Thêm ngưỡng phát hiện kéo cảm ứng
+      },
     }
   ) {
     super(toolProps, defaultToolProps);
@@ -61,7 +64,7 @@ class ThreeDCursorTool extends BaseTool {
       // SVG crosshair with white lines, no center dot.
       // Assigned to the container.
       this.viewportGridContainer.style.cursor =
-        'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGxpbmUgeDE9IjE2IiB5MT0iMCIgeDI9IjE2IiB5Mj0iMTAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxNiIgeTE9IjIyIiB4Mj0iMTYiIHkyPSIzMiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdJZHRoPSIyIi8+PGxpbmUgeDE9IjAiIHkxPSIxNiIgeDI9IjEwIiB5Mj0iMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIyMiIgeTE9IjE2IiB4Mj0iMzIiIHkyPSIxNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdJZHRoPSIyIi8+PC9zdmc+") 16 16, crosshair';
+        'url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGxpbmUgeDE9IjE2IiB5MT0iMCIgeDI9IjE2IiB5Mj0iMTAiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPjxsaW5lIHgxPSIxNiIgeTE9IjIyIiB4Mj0iMTYiIHkyPSIzMSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+PGxpbmUgeDE9IjAiIHkxPSIxNiIgeDI9IjEwIiB5Mj0iMTYiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPjxsaW5lIHgxPSIyMiIgeTE9IjE2IiB4Mj0iMzEiIHkyPSIxNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0ic3F1YXJlIi8+PC9zdmc+") 16 16, crosshair';
     }
   }
 
@@ -81,6 +84,7 @@ class ThreeDCursorTool extends BaseTool {
 
       // element.addEventListener('mousemove', this.mouseMoveHandler);
       element.addEventListener('mouseleave', this.mouseLeaveHandler);
+      element.addEventListener('touchend', this.mouseLeaveHandler);
     });
   }
 
@@ -106,6 +110,10 @@ class ThreeDCursorTool extends BaseTool {
     this.setStyleCursor(this.STYLE_CURSOR.crosshair);
   }
 
+  touchDragCallback(evt: EventTypes.InteractionEventType) {
+    this.mouseDragCallback(evt);
+  }
+
   /**
    * Xử lý khi tool bị vô hiệu hóa hoặc chuyển sang tool khác.
    * Gỡ bỏ các sự kiện đã đăng ký và ẩn hồng tâm.
@@ -126,6 +134,7 @@ class ThreeDCursorTool extends BaseTool {
 
       this.hideOrShowCursor(element, false);
       element.removeEventListener('mouseleave', this.mouseLeaveHandler);
+      element.removeEventListener('touchend', this.mouseLeaveHandler);
     });
   }
 
@@ -136,6 +145,10 @@ class ThreeDCursorTool extends BaseTool {
   getViewportFromElement(element: HTMLDivElement) {
     const viewports = this.getViewports();
     return viewports.find(vp => vp.element === element) || null;
+  }
+
+  touchEndCallback(evt: EventTypes.InteractionEventType) {
+    this.mouseMoveCallback(evt);
   }
 
   /**
